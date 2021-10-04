@@ -31,3 +31,10 @@ spec:
             httpGet:
               path: /
               port: http
+          volumeMounts:
+            - name: nginx
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: nginx
+          configMap:
+            name: {{ .Values.configMap.name }}

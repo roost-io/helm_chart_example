@@ -34,6 +34,7 @@ Create chart name and version as used by the chart label.
 Common labels
 */}}
 {{- define "hello-world.labels" -}}
+app: zbio-sample-helm-chart
 helm.sh/chart: {{ include "hello-world.chart" . }}
 {{ include "hello-world.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
